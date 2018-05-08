@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Sistema de Agendamento</title>
+		<link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<h1 class="titulo">Agendamento</h1>
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<h2>Exames Agendados</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Ficha</th>
+							<th>Nome</th>
+							<th>Exame</th>
+							<th>Data</th>
+						</tr>
+					</thead>
+					<tbody id="tabela-pacientes">
+						{% for consulta in consultas %}
+						<tr class="paciente" >
+							<td>{{consulta.id}}</td>
+							<td>{{consulta.paciente}}</td>
+							<td>{{consulta.exame}}</td>
+							<td>{{consulta.data}}</td>
+						</tr>
+						{% endfor %}
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
+	</body>
+</html>
